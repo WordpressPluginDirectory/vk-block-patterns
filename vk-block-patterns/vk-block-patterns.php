@@ -3,8 +3,8 @@
  * Plugin Name: VK Block Patterns
  * Plugin URI: https://github.com/vektor-inc/vk-block-patterns
  * Description: You can make and register your original custom block patterns.
- * Version: 1.32.4.0
- * Requires at least: 6.2
+ * Version: 1.33.5.0
+ * Requires at least: 6.5
  * Author:  Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-block-patterns
@@ -117,9 +117,46 @@ function vbp_add_pattern_link() {
 	$function    = '';
 	if ( 'ja' === get_locale() ) {
 		add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function = '' );
+		add_action( 'admin_head', 'vbp_pattern_library_menu_behaviour' );
 	}
 }
 add_action( 'admin_menu', 'vbp_add_pattern_link' );
+
+/**
+ * パターンライブラリメニューを別ウィンドウで開く
+ *
+ * @return void
+ */
+function vbp_pattern_library_menu_behaviour() {
+	$target_url = 'https://patterns.vektor-inc.co.jp/';
+	?>
+	<script>
+	(function () {
+		var targetURL = <?php echo wp_json_encode( $target_url ); ?>;
+		if (typeof targetURL === 'string') {
+			targetURL = targetURL.replace(/\/$/, '');
+		}
+		window.addEventListener('load', function () {
+			var menuLinks = document.querySelectorAll('#menu-posts-vk-block-patterns .wp-submenu a');
+			if (!menuLinks.length) {
+				return;
+			}
+			for (var i = 0; i < menuLinks.length; i++) {
+				var menuLink = menuLinks[i];
+				var menuHref = (menuLink.href || '').replace(/\/$/, '');
+				if (!menuHref) {
+					continue;
+				}
+				if (menuHref === targetURL) {
+					menuLink.setAttribute('target', '_blank');
+					menuLink.setAttribute('rel', 'noopener');
+				}
+			}
+			});
+		})();
+	</script>
+	<?php
+}
 
 /**
  * アンインストール処理
