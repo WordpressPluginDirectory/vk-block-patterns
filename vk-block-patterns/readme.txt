@@ -4,7 +4,7 @@ Donate link:
 Tags: Guternberg, Block Pattern
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.33.5.0
+Stable tag: 1.34.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,6 +15,9 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.34.0 =
+[ Other ] It is now possible to obtain X-T9 patterns from the pattern library.
 
 = 1.33.5 =
 [ Other ] The slider pattern has been updated due to a recovery issue occurring with the slider in the latest version of VK Blocks.
