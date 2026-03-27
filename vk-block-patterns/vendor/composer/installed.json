@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "vektor-inc/vk-admin",
-            "version": "0.3.3",
-            "version_normalized": "0.3.3.0",
+            "version": "0.5.0",
+            "version_normalized": "0.5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-admin.git",
-                "reference": "f500af90056a79318df9bf82568770fe4f12d545"
+                "reference": "3908c409bb72e18b27be2ce861fbf3fbc1579e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/f500af90056a79318df9bf82568770fe4f12d545",
-                "reference": "f500af90056a79318df9bf82568770fe4f12d545",
+                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/3908c409bb72e18b27be2ce861fbf3fbc1579e0c",
+                "reference": "3908c409bb72e18b27be2ce861fbf3fbc1579e0c",
                 "shasum": ""
             },
             "require-dev": {
@@ -26,7 +26,7 @@
                 "wp-phpunit/wp-phpunit": "^5.4",
                 "yoast/phpunit-polyfills": "^1.0"
             },
-            "time": "2023-05-16T04:04:02+00:00",
+            "time": "2023-08-31T00:20:44+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -47,7 +47,7 @@
             "description": "Vektor Admin Component",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-admin/issues",
-                "source": "https://github.com/vektor-inc/vk-admin/tree/0.3.3"
+                "source": "https://github.com/vektor-inc/vk-admin/tree/0.5.0"
             },
             "install-path": "../vektor-inc/vk-admin"
         }

@@ -4,7 +4,6 @@ Donate link:
 Tags: Guternberg, Block Pattern
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.34.3.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,6 +14,22 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.35.1 =
+[ Bug Fix ] Fix pattern images being corrupted during dist build process due to Gulp 5 encoding change
+
+= 1.35.0 =
+[ Add Function ] Enable theme patterns for all themes, not only X-T9.
+
+= 1.34.6 =
+[ Bug fix ] Fix cache clear button.
+
+= 1.34.5 =
+[ Other ] Skip API calls on frontend to reduce server load
+
+= 1.34.4 =
+[ Other ] Reduce the load on the VK Pattern Libraries API
+[ Other ] Allow configuring the number of patterns received in a single batch
 
 = 1.34.3 =
 [ Other ] Reduce the load on the VK Pattern Libraries API
