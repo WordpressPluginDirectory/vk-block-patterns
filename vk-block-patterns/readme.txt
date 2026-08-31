@@ -2,9 +2,10 @@
 Contributors: vektor-inc,kurudrive,rickaddison7634,kaorock72,una9,shimotomoki,doshimaf
 Donate link:
 Tags: Guternberg, Block Pattern
-Requires at least: 6.5
-Tested up to: 6.9
+Requires at least: 6.7
+Tested up to: 7.1
 Requires PHP: 7.4
+Stable tag: 1.39.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +15,39 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.39.1 =
+[ Bug Fix ] Fixed an issue where the initial pattern setting (auto add / show in candidate) was cleared every time the pattern was saved.
+[ Bug Fix ] Fixed an issue where the target post type in the initial pattern setting could fail to save when changed together with the add method, preventing patterns from being auto-inserted into new posts.
+[ Bug Fix ] Fixed an issue where the target post type in the initial pattern setting appeared to be selected (showing the first option) even when nothing had been chosen.
+
+= 1.39.0 =
+[ Specification change ] Removed the "vk-cols--reverse" and "vk-cols--hasbtn" custom classes from patterns, using core block features instead; the CSS itself is kept so existing users are unaffected.
+
+= 1.38.0 =
+[ Specification change ] Reverted the "Fit columns" breakpoint unification introduced in 1.37.0, restoring the previous 600px/782px breakpoints.
+
+= 1.37.0 =
+[ Specification change ] Removed custom classes from patterns where they are no longer needed due to core and plugin updates.
+
+[ Specification change ] Unified the "Fit columns" breakpoint at 782px so columns stack the same way as core columns.
+
+[ Specification change ] Removed the "vk-cols--media" custom class from patterns, as the same layout is now achievable with core blocks; the CSS itself is kept so existing users are unaffected.
+
+[ Bug Fix ] Fixed an issue where the vbp-editor-panel script was loaded on the widget editor screen, causing a PHP notice about wp-editor being enqueued.
+
+[ Bug Fix ] Fixed the settings screen admin CSS/JS not refreshing in the browser after an update, and the left sidebar navigation being clipped when admin notices appear.
+
+[ Bug Fix ] Fixed the "half content width" column layout where spacing was unexpectedly removed between 600px and 782px, causing columns to stick together.
+
+[ Bug Fix ] Fixed the editor preview where the "Reverse columns" option was applied below 782px instead of at 782px and above, so it now matches the front-end column layout.
+
+= 1.36.0 =
+[ Specification change ] Update Block Patterns
+[ Specification change ] Migrate meta box to block editor native sidebar panel for WordPress 7.0 RTC (Real-Time Collaboration) compatibility.
+
+= 1.35.2 =
+[ Bug Fix ] Fix dist zip structure containing incorrect dist/ prefix path
 
 = 1.35.1 =
 [ Bug Fix ] Fix pattern images being corrupted during dist build process due to Gulp 5 encoding change

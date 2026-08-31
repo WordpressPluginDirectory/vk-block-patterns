@@ -11,7 +11,7 @@ Composer の require に登録
 composer require vektor-inc/vk-admin
 ```
 
-autoload.pho を読み込み
+autoload.php を読み込み
 ```
 require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 ```
@@ -19,14 +19,33 @@ require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 本体を読み込んで実行
 
 ```
-use VektorInc\VK_Admin\VK_Admin;
-new VK_Admin();
+use VektorInc\VK_Admin\VkAdmin;
+VkAdmin::init();
 ```
 
-
----
-
 ## Change log
+
+== 0.8.1 ==
+[ Bug Fix ] Fixed admin CSS/JS not refreshing in the browser after an update because of a stale asset cache-busting version.
+
+[ Bug Fix ] Fixed the settings page left sidebar navigation being pushed off-screen and unreachable when admin notices appeared, by showing notices at the top of the page (main area) instead.
+
+== 0.8.0 ==
+[ Spec Change ] Remove `VK_Custom_Html_Control` and `VK_Custom_Text_Control` because the same classes are now provided by [vektor-inc/vk-helpers](https://github.com/vektor-inc/vk-helpers) 0.3.0+. Projects that pulled these classes from vk-admin must switch to `vektor-inc/vk-helpers ^0.3.0` (this is a breaking change).
+
+== 0.7.0 ==
+[ Feature Add ] Add `input_type` and `input_attrs` properties to `VK_Custom_Text_Control` so it can render `type=number` and other input types with arbitrary attributes (`min` / `max` / `step` / `inputmode` etc). Existing usage keeps working unchanged because both properties default to the previous behavior (`input_type='text'`, `input_attrs=array()`).
+
+== 0.6.1 ==
+[ Bug Fix ] Defer VK_Custom_Html_Control / VK_Custom_Text_Control class declaration to the `customize_register` action so that the classes do not fail to load when `WP_Customize_Control` is not yet available at composer autoload time.
+
+== 0.6.0 ==
+[ Feature Add ] Add VK_Custom_Html_Control and VK_Custom_Text_Control as shared customizer controls for reuse across plugins.
+
+== 0.5.1 ==
+[ Bug Fix ] Fixed broken vk_admin.js / CSS URL on environments where site_url and home_url differ (WordPress installed in its own directory) or wp-content is relocated.
+[ Bug Fix ] Skip enqueuing widget screen CSS when not in admin context.
+[ Other ]  Fix CSS load hook.
 
 == 0.5.0 ==
 [ Other ]  Add article list of Vektor Pattern Library
